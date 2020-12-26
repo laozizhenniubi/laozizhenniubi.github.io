@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-12-19T01:27:49.102Z</updated>
+  <updated>2020-12-26T02:05:34.367Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何用hexo+GitHub搭建一个个人博客</title>
+    <link href="http://example.com/2020/12/26/%E5%A6%82%E4%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://example.com/2020/12/26/%E5%A6%82%E4%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2020-12-25T16:00:00.000Z</published>
+    <updated>2020-12-26T02:05:34.367Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如何用hexo-github搭建一个个人博客"><a href="#如何用hexo-github搭建一个个人博客" class="headerlink" title="如何用hexo+github搭建一个个人博客"></a>如何用hexo+github搭建一个个人博客</h2><p>1.注册github</p><p>2.创建一个&lt;仓库&gt;</p><p>3.配置ssh key</p><p>4.用node.js 的npm命令安装hexo</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure><p>5.创建一个博客文件夹，记住（博客文件夹名字），命令行cd 到（博客文件夹名字）</p><p>6.初始化</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="comment"># 生成</span></span><br><span class="line">$ hexo s <span class="comment"># 启动服务</span></span><br></pre></td></tr></table></figure><p>hexo s，开启本地预览，再在浏览器输入 localhost:4000 就可以预览自己的blog了</p><a id="more"></a><p>7.修改主题</p><p>这部分可以在网上找，我用的是一个叫<next>的主题</p><p>8.上传到github</p><p>在（博客文件夹）下的_config.yml上修改deploy的部分</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:liuxianan&#x2F;liuxianan.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure><p><strong>$$注意：type 要填git，不能填github，respository要在仓库网页地址后加.git</strong></p><h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><p>1.首先</p><p><code>hexo n &quot;postName&quot; #新建文章</code></p><p>2.打开这个文档，用markdown或html语言编辑开始的时候会有初始的属性</p><p>一般完整格式如下：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: postName #文章页面上的显示名称，一般是中文</span><br><span class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改</span><br><span class="line">categories: 默认分类 #分类</span><br><span class="line">tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</span><br><span class="line">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"><span class="strong">**以下是正文</span></span><br></pre></td></tr></table></figure><p>3.写完后可以设置文章摘要</p><p>在合适的位置加上<code>&lt;!--more--&gt;</code>即可</p><p>4.完成后<code>hexo d</code>，部署到GitHub上即可</p><h2 id="至此完工，在浏览器地址写-仓库名-git-就可以访问自己的博客了"><a href="#至此完工，在浏览器地址写-仓库名-git-就可以访问自己的博客了" class="headerlink" title="至此完工，在浏览器地址写 仓库名.git 就可以访问自己的博客了"></a>至此完工，在浏览器地址写 仓库名.git 就可以访问自己的博客了</h2><h3 id="附录：常用命令"><a href="#附录：常用命令" class="headerlink" title="附录：常用命令"></a>附录：常用命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo n <span class="string">&quot;postName&quot;</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo new page <span class="string">&quot;pageName&quot;</span> <span class="comment">#新建页面</span></span><br><span class="line">hexo g <span class="comment">#生成静态页面至public目录</span></span><br><span class="line">hexo s <span class="comment">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span></span><br><span class="line">hexo d <span class="comment">#部署到GitHub</span></span><br><span class="line">hexo <span class="built_in">help</span>  <span class="comment"># 查看帮助</span></span><br><span class="line">hexo version  <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;如何用hexo-github搭建一个个人博客&quot;&gt;&lt;a href=&quot;#如何用hexo-github搭建一个个人博客&quot; class=&quot;headerlink&quot; title=&quot;如何用hexo+github搭建一个个人博客&quot;&gt;&lt;/a&gt;如何用hexo+github搭建一个个人博客&lt;/h2&gt;&lt;p&gt;1.注册github&lt;/p&gt;
+&lt;p&gt;2.创建一个&amp;lt;仓库&amp;gt;&lt;/p&gt;
+&lt;p&gt;3.配置ssh key&lt;/p&gt;
+&lt;p&gt;4.用node.js 的npm命令安装hexo&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;5.创建一个博客文件夹，记住（博客文件夹名字），命令行cd 到（博客文件夹名字）&lt;/p&gt;
+&lt;p&gt;6.初始化&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo g &lt;span class=&quot;comment&quot;&gt;# 生成&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo s &lt;span class=&quot;comment&quot;&gt;# 启动服务&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;hexo s，开启本地预览，再在浏览器输入 localhost:4000 就可以预览自己的blog了&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>hhhh</title>
